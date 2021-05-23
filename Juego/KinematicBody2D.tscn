@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://rec.png" type="Texture" id=1]
+[ext_resource path="res://KinematicBody2DD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Rectangulo.gd" type="Script" id=3]
+[ext_resource path="res://Rampa.gd" type="Script" id=4]
+[ext_resource path="res://KinematicBody2DDD.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 60.262, 26.8239 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 165.94, 17.3955 )
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+position = Vector2( 836.27, 476.636 )
+rotation = -0.523599
+script = ExtResource( 4 )
+
+[node name="rec" type="Sprite" parent="."]
+position = Vector2( 2.6377, 4.26367 )
+scale = Vector2( 0.163975, 0.0321092 )
+texture = ExtResource( 1 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 97.6073, -44.7928 )
+script = ExtResource( 3 )
+
+[node name="rec" type="Sprite" parent="KinematicBody2D"]
+position = Vector2( 1.92676, -1.99023 )
+scale = Vector2( 0.0626361, 0.058644 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 3.27664, 11.0892 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1.58383, 15.9358 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 2 )
+
+[node name="KinematicBody2D2" parent="." instance=ExtResource( 2 )]
+position = Vector2( -154.342, -210.318 )
+rotation = -0.174533
+
+[node name="KinematicBody2D3" parent="." instance=ExtResource( 5 )]
+position = Vector2( -344.636, -493.763 )
+rotation = 0.0872665
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = -111.338
+margin_top = -99.9229
+margin_right = 51.6616
+margin_bottom = -74.9229
+tab_size = 5
+text = "Hule/concreto, theta=30"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = -284.461
+margin_top = -375.642
+margin_right = -121.461
+margin_bottom = -350.642
+tab_size = 5
+text = "Madera/nieve, theta=40"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+margin_left = -436.145
+margin_top = -641.953
+margin_right = -273.145
+margin_bottom = -616.953
+tab_size = 5
+text = "Cobre/acero, theta=25"
+__meta__ = {
+"_edit_use_anchors_": false
+}
